@@ -10,7 +10,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class DBUtil {
 
-	
 	private static SqlSessionFactory sqlSessionFactory;
 	
 	public static SqlSessionFactory getSqlSessionFactory()  {
@@ -22,17 +21,13 @@ public class DBUtil {
 				inputStream = Resources.getResourceAsStream(resource);
 				sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new RuntimeException(e.getMessage(), e);
 			}
-			
 		}
 		return sqlSessionFactory;
 	}
 	
-	
 	public static SqlSession openSqlSession() {
-		
 		return getSqlSessionFactory().openSession();
 	}
 }
