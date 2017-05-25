@@ -10,7 +10,7 @@
 	<result property="age" column="age"/>
 </resultMap>
 
-  <insert id="add" parameterType="Student">
+  <insert id="add" parameterType="Student"  useGeneratedKeys="true" keyProperty="id">
     INSERT INTO t_student(name, age) VALUES(#{name}, #{age})
   </insert>
   <update id="update" parameterType="Student">

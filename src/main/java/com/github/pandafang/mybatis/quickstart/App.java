@@ -19,6 +19,10 @@ public class App
         	StudentMapper studentMapper = ss.getMapper(StudentMapper.class);
         	int result = studentMapper.add(student);
         	ss.commit();
+          	Integer id = student.getId();
+        	if (id != null) {
+        		System.out.println("插入成功 id=" + id);
+        	}
         	if (result > 0) {
         		System.out.println("增加成功, result:" + result);
         	}
