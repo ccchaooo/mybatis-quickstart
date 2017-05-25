@@ -6,6 +6,10 @@ public class Student {
 	private Integer age;
 	private String name;
 	
+	public Student() {
+		super();
+	}
+	
 	public Student(String name, Integer age) {
 		this.name = name;
 		this.age = age;
